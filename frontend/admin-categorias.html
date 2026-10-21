@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — Categorias</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>🍲 Sabor de Casa — Admin</h1>
+      <nav>
+        <a href="index.html">Ver cardápio</a>
+        <a href="#" id="link-sair">Sair</a>
+      </nav>
+    </header>
+
+    <main class="conteudo">
+      <div class="barra-acoes">
+        <h2>Categorias</h2>
+      </div>
+
+      <div id="mensagem" hidden></div>
+
+      <!-- Formulário de cadastro/edição. O mesmo serve para criar e editar:
+           quando há um id escondido preenchido, estamos editando. -->
+      <form id="form-categoria">
+        <input type="hidden" id="categoria-id" />
+        <label for="nome">Nome *</label>
+        <input type="text" id="nome" required maxlength="60" />
+
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" maxlength="255" />
+
+        <div style="margin-top: 1rem" class="acoes">
+          <button type="submit" id="btn-salvar">Adicionar categoria</button>
+          <button type="button" id="btn-cancelar" class="botao-secundario" hidden>
+            Cancelar edição
+          </button>
+        </div>
+      </form>
+
+      <h3 style="margin-top: 2rem">Categorias cadastradas</h3>
+      <table>
+        <thead>
+          <tr><th>Nome</th><th>Descrição</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="lista-categorias"></tbody>
+      </table>
+    </main>
+
+    <script type="module" src="js/admin-categorias.js"></script>
+  </body>
+</html>

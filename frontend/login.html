@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login do Administrador — Sabor de Casa</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>🍲 Sabor de Casa</h1>
+      <nav><a href="index.html">Ver cardápio</a></nav>
+    </header>
+
+    <main class="conteudo login-caixa">
+      <h2>Área do administrador</h2>
+      <!-- Mensagem de erro aparece aqui quando o login falha -->
+      <div id="mensagem" hidden></div>
+
+      <form id="form-login">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" required autocomplete="username" />
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" required autocomplete="current-password" />
+
+        <div style="margin-top: 1rem">
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- type="module" permite usar import/export entre os arquivos JS -->
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>

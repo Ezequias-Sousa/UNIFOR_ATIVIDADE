@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — Pratos</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>🍲 Sabor de Casa — Admin</h1>
+      <nav>
+        <a href="admin-categorias.html">Categorias</a>
+        <a href="index.html">Ver cardápio</a>
+        <a href="#" id="link-sair">Sair</a>
+      </nav>
+    </header>
+
+    <main class="conteudo">
+      <div class="barra-acoes">
+        <h2 id="titulo">Pratos da categoria</h2>
+        <a href="admin-categorias.html" class="botao botao-secundario">Voltar</a>
+      </div>
+
+      <div id="mensagem" hidden></div>
+
+      <form id="form-prato">
+        <input type="hidden" id="prato-id" />
+        <label for="nome">Nome *</label>
+        <input type="text" id="nome" required maxlength="100" />
+
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" maxlength="255" />
+
+        <label for="preco">Preço (R$) *</label>
+        <input type="number" id="preco" required min="0.01" step="0.01" />
+
+        <!-- Visível apenas na edição: permite marcar o prato como indisponível.
+             Ao criar, o prato nasce disponível automaticamente. -->
+        <div class="campo-check" id="campo-disponivel" hidden>
+          <input type="checkbox" id="disponivel" checked />
+          <label for="disponivel" style="margin: 0">Disponível</label>
+        </div>
+
+        <div style="margin-top: 1rem" class="acoes">
+          <button type="submit" id="btn-salvar">Adicionar prato</button>
+          <button type="button" id="btn-cancelar" class="botao-secundario" hidden>
+            Cancelar edição
+          </button>
+        </div>
+      </form>
+
+      <h3 style="margin-top: 2rem">Pratos cadastrados</h3>
+      <table>
+        <thead>
+          <tr><th>Nome</th><th>Preço</th><th>Situação</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="lista-pratos"></tbody>
+      </table>
+    </main>
+
+    <script type="module" src="js/admin-pratos.js"></script>
+  </body>
+</html>
